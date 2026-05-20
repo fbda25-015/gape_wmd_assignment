@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback - CEDA</title>
+  <meta name="description" content="Submit your feedback to the Citizen Entrepreneurial Development Agency.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+
+<body>
+
+  <nav class="site-navbar navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fa-solid fa-hands-holding-circle text-primary"></i>
+        CEDA
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="apply.html">How to
+              Apply</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+          <li class="nav-item ms-lg-2"><a class="btn-custom btn-custom-outline active" href="feedback.html">Submit
+              Feedback</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="bg-primary text-white py-5 mb-5"
+      style="background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));">
+      <div class="container py-4 text-center">
+        <h1 class="display-4 fw-bold text-white mb-3">Citizen Feedback</h1>
+        <p class="lead max-w-50 mx-auto text-white-50">Your voice matters. Let us know how we can improve our services
+          and programs.</p>
+      </div>
+    </section>
+
+    <section class="container py-5 animate-on-scroll">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card-ui">
+            <div class="text-center mb-4">
+              <i class="fa-solid fa-comment-dots fa-3x text-primary mb-3"></i>
+              <h3 class="fw-bold">We Value Your Opinion</h3>
+              <p class="text-secondary">Please fill out the form below to submit a complaint, suggestion, or general
+                feedback.</p>
+            </div>
+
+            <form class="form-ui">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="feedbackName" class="form-label">Name (Optional)</label>
+                  <input type="text" class="form-control" id="feedbackName" placeholder="John Doe">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="feedbackEmail" class="form-label">Email (Optional)</label>
+                  <input type="email" class="form-control" id="feedbackEmail" placeholder="john@example.com">
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="feedbackType" class="form-label">Type of Feedback *</label>
+                <select class="form-select" id="feedbackType" required>
+                  <option value="" selected disabled>Select an option</option>
+                  <option value="suggestion">Suggestion for Improvement</option>
+                  <option value="complaint">Service Complaint</option>
+                  <option value="compliment">Compliment/Praise</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="programRelated" class="form-label">Related Program (If applicable)</label>
+                <select class="form-select" id="programRelated">
+                  <option value="none">None / General</option>
+                  <option value="workforce">Workforce Readiness</option>
+                  <option value="microgrants">SME Micro-Grants</option>
+                  <option value="digital">Digital Literacy</option>
+                  <option value="health">Community Clinics</option>
+                </select>
+              </div>
+
+              <div class="mb-4">
+                <label for="feedbackDetails" class="form-label">Detailed Feedback *</label>
+                <textarea class="form-control" id="feedbackDetails" rows="5"
+                  placeholder="Please provide specific details so we can best address your feedback."
+                  required></textarea>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" value="" id="followUpCheck">
+                <label class="form-check-label text-secondary" for="followUpCheck">
+                  I would like CEDA to contact me regarding this feedback. (Requires email)
+                </label>
+              </div>
+
+              <button type="submit" class="btn-custom btn-custom-primary w-100 border-0 py-3">Submit Feedback
+                Securely</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <h5 class="fw-bold"><i class="fa-solid fa-hands-holding-circle me-2"></i> CEDA</h5>
+          <p>The Citizen Entrepreneurial Development Agency is dedicated to fostering national growth through diverse
+            investment opportunities.</p>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="programs.html">Programs</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6">
+          <h5>Support</h5>
+          <ul class="footer-links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="feedback.html">Submit Feedback</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h5>Stay Updated</h5>
+          <div class="input-group mb-3 form-ui">
+            <input type="email" class="form-control" placeholder="Email address">
+            <button class="btn btn-primary px-4" type="button"
+              style="background-color: var(--primary-color); border-color: var(--primary-color);">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="mb-0">&copy; 2026 Citizen Entrepreneurial Development Agency (CEDA). All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
