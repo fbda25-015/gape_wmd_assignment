@@ -29,12 +29,9 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
           <li class="nav-item"><a class="nav-link" href="programs.html">Programs</a></li>
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="apply.html">How to
-              Apply</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="apply.html">How to Apply</a></li>
           <li class="nav-item"><a class="nav-link active" aria-current="page" href="contact.html">Contact</a></li>
-
-          <li class="nav-item ms-lg-2"><a class="btn-custom btn-custom-primary" href="feedback.html">Submit Feedback</a>
-          </li>
+          <li class="nav-item ms-lg-2"><a class="btn-custom btn-custom-primary" href="feedback.html">Submit Feedback</a></li>
         </ul>
       </div>
     </div>
@@ -45,8 +42,7 @@
       style="background: linear-gradient(135deg, var(--primary-dark), var(--primary-color));">
       <div class="container py-4 text-center">
         <h1 class="display-4 fw-bold text-white mb-3">Get in Touch</h1>
-        <p class="lead max-w-50 mx-auto text-white-50">Have questions about our programs or need support? We're here to
-          help.</p>
+        <p class="lead max-w-50 mx-auto text-white-50">Have questions about our programs or need support? We're here to help.</p>
       </div>
     </section>
 
@@ -55,18 +51,21 @@
         <div class="col-lg-6">
           <div class="card-ui">
             <h3 class="fw-bold mb-4">Send Us a Message</h3>
-            <form class="form-ui">
+            <form class="form-ui" id="contactForm" novalidate>
               <div class="mb-3">
                 <label for="fullName" class="form-label">Full Name</label>
                 <input type="text" class="form-control" id="fullName" placeholder="Jane Doe">
+                <div class="invalid-feedback" id="fullNameError">Please fill in this field.</div>
               </div>
               <div class="mb-3">
                 <label for="emailAddr" class="form-label">Email address</label>
                 <input type="email" class="form-control" id="emailAddr" placeholder="jane@example.com">
+                <div class="invalid-feedback" id="emailAddrError">Please fill in this field.</div>
               </div>
               <div class="mb-4">
                 <label for="messageBody" class="form-label">Message</label>
                 <textarea class="form-control" id="messageBody" rows="4" placeholder="How can we help you?"></textarea>
+                <div class="invalid-feedback" id="messageBodyError">Please fill in this field.</div>
               </div>
               <button type="submit" class="btn-custom btn-custom-primary w-100 border-0">Send Message</button>
             </form>
@@ -74,8 +73,7 @@
         </div>
         <div class="col-lg-5 offset-lg-1">
           <h3 class="fw-bold mb-4">Contact Information</h3>
-          <p class="text-secondary mb-5">Reach out to our main office during business hours, or use the emergency
-            support line for urgent assistance.</p>
+          <p class="text-secondary mb-5">Reach out to our main office during business hours, or use the emergency support line for urgent assistance.</p>
 
           <div class="d-flex mb-4">
             <div class="card-ui-icon flex-shrink-0" style="width: 50px; height: 50px; margin-bottom: 0;">
@@ -116,8 +114,7 @@
       <div class="row g-4">
         <div class="col-lg-4 col-md-6">
           <h5 class="fw-bold"><i class="fa-solid fa-hands-holding-circle me-2"></i> CEDA</h5>
-          <p>The Citizen Entrepreneurial Development Agency is dedicated to fostering national growth through diverse
-            investment opportunities.</p>
+          <p>The Citizen Entrepreneurial Development Agency is dedicated to fostering national growth through diverse investment opportunities.</p>
         </div>
         <div class="col-lg-2 col-md-6">
           <h5>Quick Links</h5>
@@ -152,6 +149,38 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/main.js"></script>
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const fields = ['fullName', 'emailAddr', 'messageBody'];
+      let isValid = true;
+      fields.forEach(function (id) {
+        const input = document.getElementById(id);
+        const error = document.getElementById(id + 'Error');
+        if (!input.value.trim()) {
+          input.classList.add('is-invalid');
+          error.style.display = 'block';
+          isValid = false;
+        } else {
+          input.classList.remove('is-invalid');
+          error.style.display = 'none';
+        }
+      });
+      if (isValid) {
+        this.reset();
+        alert('Message sent successfully!');
+      }
+    });
+
+    ['fullName', 'emailAddr', 'messageBody'].forEach(function (id) {
+      document.getElementById(id).addEventListener('input', function () {
+        if (this.value.trim()) {
+          this.classList.remove('is-invalid');
+          document.getElementById(id + 'Error').style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
